@@ -1,0 +1,20 @@
+.product-image {
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 0.5em;
+  font-size: 0.9em;
+}
+
+.cart-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}

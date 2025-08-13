@@ -1,0 +1,79 @@
+.grid-container {
+  padding: 50px 20px;
+  background: linear-gradient(to right,  #f8f5f2,  #f8f5f2);
+  direction: rtl;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.grid-title {
+  color: #333;
+  font-size: xx-large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 2px;
+}
+
+.navigation-buttons {
+  margin-bottom: -10px;
+}
+
+.navigation-buttons button {
+  background-color:  #f8f5f2;
+  color: #f8f5f2;
+  border: none;
+  font-size: 22px;
+  margin: 0 5px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.navigation-buttons button:hover {
+  background-color:  #f8f5f2;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* בדיוק 4 עמודות */
+  gap: 24px; /* רווח אחיד בין כולם */
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.testimonial-box {
+  background-color: #f8f5f2;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.testimonial-box:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-text {
+  color: #444;
+  margin-bottom: 12px;
+  text-align: right;
+  font-size: larger;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.testimonial-author {
+  font-size: medium;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #777;
+  text-align: left;
+}
+

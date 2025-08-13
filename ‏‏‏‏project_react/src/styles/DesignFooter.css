@@ -1,0 +1,38 @@
+.footer-design {
+  background-color: #f8f5f2 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;       /* אם אתה רוצה שיישאר מוצמד בתחתית המסך */
+  bottom: 0;              /* להצמדות לתחתית */
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  direction: rtl;
+  margin-top: 2px; /* אפשר להשאיר אם רוצים רווח מעל */
+}
+
+
+.footer-link {
+  color: #333; /* צבע טקסט */
+  text-decoration: none; 
+  transition: color 0.3s ease; /* אפקט מעבר */
+  font-size: x-large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* עיצובים של קומפוננטת about */
+
+/* , של התמונת מללOrderConfirmationImage עיצובים של קומפוננטת  */
+.OrderConfirmationImage-image{
+  width: 450px; /* גודל מותאם לתמונות */
+  height: auto; /* שומר על יחס התמונה */
+}
+
+/* עיצובים קטגוריות בעמוד הבית */
+/* עיצוב של הכפתורים של הקטגוריות */
+.button-text {
+  font-weight: bold; /* מדגיש את הכתב */
+  font-size: 30px; /* מגדיל את הכתב */
+  text-transform: uppercase; /* הופך את הטקסט לאותיות גדולות */
+}

@@ -1,0 +1,36 @@
+.icon-container {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    direction: rtl;  
+    gap : 50px;
+}
+  .icon-box {
+    display: flex;
+    align-items: center;/* מיישר לגובה אמצעי */
+    cursor: pointer;
+  }
+
+  .icon-box:hover {
+    transform: scale(1.05);
+  }
+  
+  .icon-img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    margin-left: 10px;
+  }
+  .icon-text{
+    font-size: x-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    text-decoration: underline;
+  }
+  .icon-box p {
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(48, 48, 49);
+  }
+ 

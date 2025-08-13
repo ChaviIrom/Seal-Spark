@@ -1,0 +1,155 @@
+.product-details-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px; /* קצת פחות */
+  direction: rtl;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: row; /* פריסה אופקית */
+  align-items: flex-start;
+  gap: 20px; /* צמצום רווח */
+  padding: 20px; /* צמצום padding */
+  max-width: 1000px; /* קצת יותר קטן */
+  width: 100%;
+  background-color: #fdfcfa;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* התמונה בצד שמאל */
+.image-container {
+  flex: 1 1 50%; /* 50% רוחב */
+  display: flex;
+  justify-content: flex-start; /* מקצה שמאל */
+}
+
+.product-image {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 500px; /* קצת קטן יותר */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* אזור הטקסט והכפתורים */
+.product-info {
+  flex: 1 1 50%; /* 50% רוחב */
+  max-width: none;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* כיתוב המוצר */
+.product-info p {
+  font-size: 20px; /* קצת קטן יותר */
+  margin: 8px 0;
+}
+
+/* אזור הכפתורים מתחת לכיתוב */
+.bottom-actions {
+  display: flex;
+  justify-content: flex-start; /* מיושר לימין כי זה RTL */
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+  flex-wrap: nowrap;
+}
+
+/* סלקטור הכמות */
+.quantity-selector {
+  transform: scale(1.1); /* קצת קטן יותר */
+}
+
+/* כפתור הוספה לסל */
+.add-to-cart-button {
+  padding: 10px 25px;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #444;
+}
+.customization-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.customization-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.customization-section label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.customization-section input,
+.customization-section select {
+  padding: 8px 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+
+.add-to-cart-button {
+  margin-top: 15px;
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #444;
+}
+
+/* רספונסיביות למובייל */
+@media (max-width: 768px) {
+  .product-card {
+    flex-direction: column; /* עמודה */
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .image-container,
+  .product-info {
+    flex: none;
+    width: 100%;
+  }
+
+  .product-image {
+    max-height: 350px;
+  }
+
+  .product-info p {
+    font-size: 18px;
+  }
+
+  .bottom-actions {
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+}

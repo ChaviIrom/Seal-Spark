@@ -1,0 +1,84 @@
+/* צבע רקע כללי לגוף האתר */
+body {
+  background-color: #f8f5f2; /* בז' בהיר */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* סידור עמוד מלא עם Header + Footer קבועים */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 85vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 10px 16px; /* פחות ריווח אנכי */
+}
+
+/* עיצוב מחודש ל-Header ו-Footer */
+header, footer {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px 30px;
+  text-align: center;
+  backdrop-filter: blur(4px); /* אופציונלי – טשטוש מזכוכית */
+  background-color: #f8f5f2 !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08) !important; */
+}
+
+/* אם רוצים שה-header וה-footer יהיו קבועים תמיד על המסך: */
+/*
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+}
+
+.main-content {
+  padding-top: 80px;  
+  padding-bottom: 60px;
+}
+*/
+
+/* דוגמה כללית לעיצוב כפתורים או כיתוב */
+button, a {
+  font-family: inherit;
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* קישורים בתוך הטקסט בלי קו תחתי */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* דוגמה ליישור טקסטים */
+h1, h2, h3, p {
+  margin: 0 0 15px;
+  line-height: 1.6;
+}
+
+/* תמונות או בלוקים בתוך עמוד */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

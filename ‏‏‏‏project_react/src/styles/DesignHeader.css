@@ -1,0 +1,53 @@
+.icons-left-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* קצת יותר רווח */
+  position: relative;
+  left: 0;
+}
+
+.shope-button, .search-button {
+  position: relative;
+  left: auto;
+  transform: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.login-register-button {
+  position: relative;
+  left: auto; /* הסרת ה-left */
+  margin-right: 6px;
+  cursor: pointer;
+  display: flex;
+  margin-top: 0;
+  width: 38px;
+}
+
+/* הסר את ה-left מהלוגו, ושים רק transform Y אם צריך */
+.Logo {
+  width: 250px;
+  height: 60px;
+  object-fit: contain;
+  transform: translateY(5%);
+  left: auto;
+}
+
+.header-design {
+  background-color: #f8f5f2 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  direction: rtl;
+  margin-bottom: 30px;
+}
+
+

@@ -1,0 +1,68 @@
+.order-details-container {
+  max-width: 1200px; /* הרחבנו מ-1000 ל-1200 */
+  margin: 40px auto;
+  padding: 32px;
+  background-color: #fdfaf6;
+  border-radius: 3px;
+  font-family: 'Segoe UI', sans-serif;
+  direction: rtl;
+}
+
+.order-details-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.order-card {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px; /* הרחבנו מרוחב 800 ל-1000 */
+  background-color: #fdfaf6;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  padding: 24px;
+  gap: 28px;
+  text-align: right;
+}
+
+.order-card img {
+  width: 200px; /* יותר גדול מ-120 */
+  height: 200px;
+  border-radius: 10px;
+  border: 1px solid #fdfaf6;
+}
+
+.order-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #444;
+  direction: rtl;
+  font-size: larger;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.order-details-container h3 {
+  text-align: end;
+  margin-top: 40px;
+  color: #222;
+  font-size: 1.4rem;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+

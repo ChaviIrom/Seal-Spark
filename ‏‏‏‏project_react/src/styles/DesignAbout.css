@@ -1,0 +1,22 @@
+.about-container {
+  direction: rtl;
+  max-width: 1000px;   /* מה תהיה אורך השורה */
+  /* רווח בין הכיתוב לfooter , לתחתית המסך */
+  margin: -45px auto;
+  /* הרווח בין הnav ל header */
+  padding: 1px;
+  /* background-color: #fff; */
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.8;   /* רווח בין השורות */
+  color: #2d2d2d;
+  text-align: center;   /* איפה הכיתובים יעמדו */
+}
+.anima-sramp{
+  position: fixed;  /* ממקם את האייקון במקום קבוע במסך */
+  left: 100px;       /* המרחק מהקצה השמאלי של המסך */
+  /* transform: translateY(90%);  */
+}
+

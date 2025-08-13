@@ -1,0 +1,88 @@
+.welcome-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 40px 30px;
+  direction: rtl;
+  gap: 40px;
+  height: auto; /* גובה מותאם לתוכן */
+}
+
+.welcome-text {
+  flex: 1.4;
+  max-width: 500px; /* מגביל את הרוחב של הטקסט */
+  background-color: #f8f5f2;
+  padding: 30px;
+  font-size: 1.2rem;
+  line-height: 2.1rem;
+  color: #222;
+  border-radius: 5px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome-image {
+  flex: 1;
+  max-width: 550px;
+  aspect-ratio: 6 / 4; /* שמירה על פרופורציות */
+  object-fit: cover;
+  border-radius: 5px; /* כמעט ישר */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+
+.welcome-text h1 {
+  font-size: 2.7rem;
+  margin-bottom: 1rem;
+  color: #272727;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.welcome-text p {
+  font-size: 1.2rem;
+  color: #444;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-design {
+   background-color:  #f8f5f2 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  direction: rtl;
+  padding: 0.01px; 
+   /* גובה נוסף */
+  direction: rtl;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.nav-categories-design-text{
+  direction: rtl;
+  text-align: center; 
+  font-size: xx-large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.nav-categories-design-background{
+  background-color:  #f8f5f2 !important;
+  direction: rtl;
+}
+.about-container {
+  display: flex; /* מציג את התוכן בצורה גמישה */
+  justify-content: center; /* מיישר את התוכן במרכז */
+  align-items: center; /* מיישר את התוכן במרכז */
+  height: 40vh; /* גובה של 70% מהמסך */
+  gap : 2px;
+  min-height: 500px;
+}
+.about-image{
+  width: 500px; /* גודל מותאם לתמונות */
+  height: auto; /* שומר על יחס התמונה */
+}

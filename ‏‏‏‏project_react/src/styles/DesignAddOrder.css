@@ -1,0 +1,121 @@
+.addOrderPageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fdfaf6;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.addOrderForm {
+  width: 100%;
+  max-width: 550px;
+  background-color:#fdfaf6;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  direction: rtl;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #333;
+}
+
+.addOrderForm h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* עיצוב כל השדות כולל CVC ותוקף */
+.addOrderForm input,
+.addOrderForm select,
+.addOrderForm textarea {
+  padding: 12px;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fdfaf6;
+  color: #333;
+  text-align: right;
+  direction: rtl;
+  resize: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* עיצוב ייחודי לכתובת שיהיה כמו כל השדות */
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"] {
+  background-color: #fdfaf6 !important;
+  font-size: 1.2rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* במעבר שדה */
+.addOrderForm input:focus,
+.addOrderForm select:focus,
+.addOrderForm textarea:focus {
+  border-color: #888;
+  outline: none;
+}
+
+.addOrderForm button {
+  background-color: #333;
+  color: #fff;
+  padding: 14px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addOrderForm button:hover {
+  background-color: #000;
+}
+
+.error-text {
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #f8d7da;
+  color: #721c24;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  direction: rtl;
+}
+
+.success-message {
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #f8f5f2;
+  color: #0e0d0d;
+  direction: rtl;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* יישור סה"כ לתשלום לימין */
+.total-amount {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  direction: rtl;
+  margin-bottom: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.total-amount span {
+  white-space: nowrap;
+}

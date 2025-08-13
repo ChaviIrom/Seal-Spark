@@ -1,0 +1,141 @@
+.main-contact-layout {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40vh;
+  }
+  
+  /* צד שמאל עם תמונה */
+  .left-image-side {
+    width: 50%;  /* הרוחב שזה יתפוס מהמסך */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .left-image-side img {
+    width: 638px;
+    height: 515px;
+    border-radius: 9px;
+  }
+  /* הצד של המידע - בימין למסך */
+  .right-content {
+    width: 57%;  /* הרוחב שזה יתפוס מהמסך */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     margin: 200px auto;
+  }
+  .contact-text{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    color:  #000000;
+    align-items: center;
+  }
+  .contact-header {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+    /* font-weight: bold; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+     top: 143px;
+  }
+  .contact-icons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+    padding-right: 40px;
+    gap: 15px;
+    top:143;
+  }
+  .contact-icon-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .contact-icon-line img {
+    width: 24px;
+    height: 24px;
+  }
+  .form-text{
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #000000;
+  }
+  .form-text-input{
+    width: 280px;
+    height: 55px;
+    font-size: larger;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    background-color:  #f8f5f2;
+    color: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* צללית */
+    border: #f8f5f2; 
+    border-radius: 8px;
+    direction: rtl;
+    text-align: right;
+    padding: 0 10px;
+  }
+  .form-text-input::placeholder {
+    color: black; /* צבע הטקסט של ה-placeholder */
+    opacity: 1; /* ודא שזה לא שקוף */
+  }
+
+  .contact-header {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+  }
+  
+  .contact-icons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: -188px;
+    padding-right: 40px;
+    gap: 15px;
+    top:143;
+  }
+  .contact-icon-line img {
+    width: 24px;
+    height: 24px;
+  }
+  .contact-icon-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* הצד של המידע - באמצע... */
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 3px 3px;
+    width: 500px;
+    margin-bottom: 1px;
+    align-items: center;
+    max-width: 1000px;
+  }
+   
+  .form-position{
+    align-items: flex-end;
+  }
+  .form-button{
+    width: 290px;
+    height: 55px;
+    background-color: #f8f5f2;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease; /* אפקט מעבר */
+  }
+  
