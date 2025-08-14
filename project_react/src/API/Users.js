@@ -143,14 +143,14 @@ export const login = async (id) => {
 //   return data;  // { accessToken }
 // };
 
-export const CurrentUser = async () => {
+export const CurrentUser = async (dispatch) => {
   try {
     const token = getToken();
-    if (!token) 
-      {
-        console.log('CurrentUser token: ', token)
-        return null; 
-      } // אם אין טוקן, אין משתמש מחובר
+    if (!token) {
+      console.log('CurrentUser token missing');
+      dispatch?.({ type: "USER_LOGIN_FAIL", payload: "No token" });
+      return null;
+    }
 
     const response = await fetch(`${BASE_URL}/me`, {
       headers: {
@@ -159,11 +159,18 @@ export const CurrentUser = async () => {
       }
     });
 
-    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    if (!response.ok) {
+      if (response.status === 401) {
+        // טוקן פג
+        localStorage.clear();
+        dispatch?.({ type: "USER_LOGIN_FAIL", payload: "Token expired" });
+      }
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
 
     const data = await response.json();
-    console.log('CurrentUser data: ', data)
-    return data; // פרטי המשתמש
+    console.log('CurrentUser data: ', data);
+    return data;
   } catch (error) {
     console.error("Error fetching current user:", error);
     return null;

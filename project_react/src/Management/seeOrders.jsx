@@ -13,7 +13,7 @@ export default function SeeOrders() {
   const { orders = [] } = useSelector((state) => state.orders || {});
   const { users = [] } = useSelector((state) => state.users || {});
   const { products = [] } = useSelector((state) => state.products || {});
-  
+
   useEffect(() => {
     dispatch(fetchOrders());
     dispatch(fetchUsers());
@@ -25,11 +25,16 @@ export default function SeeOrders() {
     return user ? `${user.fullName} (${user.email})` : "משתמש לא ידוע";
   };
 
+  console.log('orders' , orders)
+  console.log('users' , users)
+  console.log('products' , products)
+
 const calculateTotal = (order, products) => {
   if (!order.items) return 0;
   return order.items.reduce((acc, item) => {
     // console.log('מחפש מוצר עם מזהה:', item.productId);
-    const product = products.find(p => Number(p.id) === Number(item.productId));
+    const product = products.find(p => (p.id) == (item.productId));
+    console.log('product.',product)
     // console.log('מוצר שנמצא:', product);
     const price = product ? product.price : 0;
     return acc + price * item.quantity;

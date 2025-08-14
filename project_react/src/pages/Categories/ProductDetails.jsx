@@ -35,8 +35,8 @@ export default function ProductDetails() {
 
   const handleAddToCart = () => {
     const customizedProduct = {
-      id: product.id || product._id,    // לשמור id לשימוש ב-Redux
-      productId: product.id || product._id, // להוסיף לפי הסכמה במונגו
+      // id: product.id || product.id,    // לשמור id לשימוש ב-Redux
+      productId: product.id , // להוסיף לפי הסכמה במונגו
       quantity,
       customName,
       customMessage,

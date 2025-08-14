@@ -6,21 +6,18 @@ const initialState = {
 export const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
-      const existingItem = state.cartItems.find(
-        (item) => item.id === action.payload.id
-      );
-
+    const existingItem = state.cartItems.find(
+      (item) => item.productId === action.payload.productId
+    );
       let updatedCartItems;
 
       if (existingItem) {
-        updatedCartItems = state.cartItems.map((item) =>
-          item.id === action.payload.id
-            ? {
-                ...item,
-                quantity: item.quantity + (action.payload.quantity || 1),
-              }
-            : item
-        );
+      updatedCartItems = state.cartItems.map((item) =>
+      item.productId === action.payload.productId
+        ? { ...item, quantity: item.quantity + (action.payload.quantity || 1) }
+        : item
+    );
+
       } else {
         updatedCartItems = [
           ...state.cartItems,
@@ -42,7 +39,7 @@ export const cartReducer = (state = initialState, action) => {
 
     case "REMOVE_FROM_CART":
       const filteredItems = state.cartItems.filter(
-        (item) => item.id !== action.payload
+        (item) => item.productId !== action.payload
       );
       return {
         ...state,
@@ -55,7 +52,7 @@ export const cartReducer = (state = initialState, action) => {
 
     case "INCREMENT_QUANTITY":
       const incCartItems = state.cartItems.map((item) =>
-        item.id === action.payload
+        item.productId === action.payload
           ? { ...item, quantity: item.quantity + 1 }
           : item
       );
@@ -71,7 +68,7 @@ export const cartReducer = (state = initialState, action) => {
     case "DECREMENT_QUANTITY":
       const decCartItems = state.cartItems
         .map((item) =>
-          item.id === action.payload
+          item.productId === action.payload
             ? { ...item, quantity: item.quantity - 1 }
             : item
         )

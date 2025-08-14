@@ -13,17 +13,15 @@ export const usersReducer = (state = initialState, action) => {
       localStorage.setItem("isLoggedIn", "true");
       return {
         ...state,
-        currentUser: {
-          ...state.currentUser,
-          ...action.payload
-        },
+        currentUser: action.payload,
         error: null
       };
 
     case 'USER_LOGIN_FAIL':
+      console.log("USER_LOGIN_FAIL נשלח:", action.payload);
       localStorage.removeItem("userData");
       localStorage.removeItem("isLoggedIn");
-      localStorage.removeItem("authToken");
+      localStorage.removeItem("accessToken");
       return {
         ...state,
         currentUser: null,
@@ -70,11 +68,16 @@ export const usersReducer = (state = initialState, action) => {
     case 'FETCH_USER_BY_ID_SUCCESS':
       return {
         ...state,
-        currentUser: {
-          ...state.currentUser,
-          ...action.payload
-        },
+        currentUser: action.payload
       };
+      case 'USER_LOGOUT':
+  localStorage.clear();
+  return {
+    ...state,
+    currentUser: null,
+    error: null,
+  };
+
 
     default:
       return state;

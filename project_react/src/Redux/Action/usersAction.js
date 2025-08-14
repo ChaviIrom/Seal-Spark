@@ -88,7 +88,8 @@ export const loginUser = (id) => async (dispatch) => {
     };
   // 📌 שמירה ב-localStorage כדי לשמר מצב התחברות
     const expiryTime = Date.now() + 60 * 60 * 1000;
-    localStorage.setItem("authToken", result.accessToken);
+    console.log('expiryTime', expiryTime)
+    localStorage.setItem("accessToken", result.accessToken);
     localStorage.setItem("userData", JSON.stringify(userData));
     localStorage.setItem("tokenExpiry", expiryTime);
     localStorage.setItem("isLoggedIn", "true");
@@ -103,16 +104,30 @@ export const loginUser = (id) => async (dispatch) => {
 
 // שליפת משתמש נוכחי
 export const fetchCurrentUser = () => async (dispatch) => {
+  const expiry = localStorage.getItem("tokenExpiry");
+  if (!expiry || Date.now() > Number(expiry)) {
+    // טוקן פג → איפוס state
+    localStorage.clear();
+    dispatch({ type: "USER_LOGIN_FAIL", payload: "Token expired" });
+    return null;
+  }
+
   try {
     const user = await CurrentUser();
     if (user) {
       localStorage.setItem("userData", JSON.stringify(user));
       localStorage.setItem("isLoggedIn", "true");
       dispatch({ type: "USER_LOGIN_SUCCESS", payload: user });
+      return user;
     } else {
+      localStorage.clear();
       dispatch({ type: "USER_LOGIN_FAIL", payload: "No user logged in" });
+      return null;
     }
   } catch (error) {
+    localStorage.clear();
     dispatch({ type: "USER_LOGIN_FAIL", payload: error.message });
+    return null;
   }
 };
+

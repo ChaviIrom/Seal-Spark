@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   incrementQuantity,
   decrementQuantity,
-  removeFromCart
+  // removeFromCart
 } from "../../Redux/Action/shopCartActions.js";
 import QuantitySelector from '../../component/QuantitySelector.jsx';
 
@@ -13,6 +13,7 @@ export default function ShopCart() {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
 
+  console.log('totalprice', totalPrice)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -42,7 +43,7 @@ export default function ShopCart() {
         ) : (
           <div className="cart-items">
             {cartItems.map((item) => (
-              <div key={item.id} className="cart-item">
+              <div key={item.productId} className="cart-item">
                 {/* פרטים בצד ימין */}
                 <div className="item-details">
                   <h3 className="item-name">{item.name}</h3>
@@ -53,17 +54,10 @@ export default function ShopCart() {
                   <div className="item-actions">
                     <QuantitySelector
                       quantity={item.quantity}
-                      onDecrement={() => dispatch(decrementQuantity(item.id))}
-                      onIncrement={() => dispatch(incrementQuantity(item.id))}
+                      onDecrement={() => dispatch(decrementQuantity(item.productId))}
+                      onIncrement={() => dispatch(incrementQuantity(item.productId))}
                       size="small"
                     />
-                    <button
-                      className="remove-from-cart-button"
-                      onClick={() => dispatch(removeFromCart(item.id))}
-                      aria-label="הסר מוצר מהסל"
-                    >
-                      הסר
-                    </button>
                   </div>
                 </div>
 

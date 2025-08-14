@@ -2,15 +2,20 @@ export const addToCart = (product) => (dispatch, getState) => {
   dispatch({
     type: 'ADD_TO_CART',
     payload: {
-      id: product.id,
+      productId: product.id, // שם זהה לשדה במסד
       name: product.name,
       price: product.price,
       image: product.image,
       quantity: product.quantity || 1,
+      customName: product.customName || '',
+      customMessage: product.customMessage || '',
+      selectedFont: product.selectedFont || '',
+      selectedLanguage: product.selectedLanguage || ''
     },
   });
   localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
 };
+
 export const removeFromCart = (id) => (dispatch, getState) => {
   dispatch({
     type: "REMOVE_FROM_CART",
