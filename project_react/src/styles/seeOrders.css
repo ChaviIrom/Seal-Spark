@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: flex-start;
   padding: 2rem 1rem;
-  font-family: "Assistant", sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   direction: rtl;
 }
 
@@ -24,7 +24,6 @@
   color: #333;
   font-size: 2rem;
   font-weight: 700;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .admin-order-card {
@@ -45,7 +44,6 @@
   color: #0e030a;
   font-weight: 700;
   font-size: 1.4rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .admin-order-card p {
@@ -53,37 +51,28 @@
   color: #393838;
   font-size: 1rem;
   line-height: 1.5;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .admin-order-card strong {
   color: #222;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.admin-order-card button {
+.admin-order-card-link {
+  display: inline-block;
   margin-top: 15px;
   padding: 10px 20px;
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: none;
-  border: none;
-  display: inline-block;
   text-decoration: none;
   text-align: center;
+  background-color: #000;
+  color: #fff;
+  transition: background-color 0.3s ease;
 }
 
-
-.admin-order-card button.MuiButton-root {
-  background-color: #000 !important;
-  color: #fff !important;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.admin-order-card button.MuiButton-root:hover {
-  background-color: #444 !important;
+.admin-order-card-link:hover {
+  background-color: #444;
 }
 
 .ordersBox p {
@@ -91,5 +80,4 @@
   color: #161616;
   font-size: 1.1rem;
   margin-top: 40px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
