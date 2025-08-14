@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   incrementQuantity,
   decrementQuantity,
-  // removeFromCart
 } from "../../Redux/Action/shopCartActions.js";
 import QuantitySelector from '../../component/QuantitySelector.jsx';
 
@@ -27,7 +26,7 @@ export default function ShopCart() {
   };
 
   const handleClose = () => {
-    navigate(-1);
+    navigate('/');
   };
 
   return (

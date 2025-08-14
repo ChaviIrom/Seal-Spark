@@ -49,32 +49,34 @@
   margin: 8px 0;
 }
 
-/* אזור הכפתורים מתחת לכיתוב */
 .bottom-actions {
   display: flex;
-  justify-content: flex-start; /* מיושר לימין כי זה RTL */
-  align-items: center;
-  gap: 15px;
-  margin-top: 10px;
-  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;       /* מיישר אנכית */
+  gap: 10px;                 /* רווח בין האלמנטים */
+  justify-content: flex-start; 
 }
 
-/* סלקטור הכמות */
-.quantity-selector {
-  transform: scale(1.1); /* קצת קטן יותר */
-}
-
-/* כפתור הוספה לסל */
+.quantity-selector,
 .add-to-cart-button {
-  padding: 10px 25px;
-  font-size: 16px;
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  height: 40px;           /* אותו גובה */
+  min-width: 120px;       /* אותו רוחב */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;              /* אין margin שמזיז */
+  padding: 0;             /* אין padding פנימי שמזיז */
+  box-sizing: border-box;
 }
+
+.quantity-selector button,
+.quantity-selector input {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 .add-to-cart-button:hover {
   background-color: #444;

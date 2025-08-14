@@ -14,9 +14,9 @@ export default function SeeUsers() {
   return (
     <div className="usersContainer">
       <div className="usersBox">
-        <h2 style={{ fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" }}>רשימת משתמשים</h2>
+        <h2>רשימת משתמשים</h2>
         {users.length === 0 ? (
-          <p style={{ fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" }}>אין משתמשים להצגה</p>
+          <p>אין משתמשים להצגה</p>
         ) : (
           <table className="usersTable">
             <thead>

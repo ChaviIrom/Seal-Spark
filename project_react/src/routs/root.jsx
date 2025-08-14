@@ -14,36 +14,33 @@ export default function Root() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-useEffect(() => {
-  const initUser = async () => {
-    const user = await dispatch(fetchCurrentUser());
-  };
+  useEffect(() => {
+    const initUser = async () => {
+      const user = await dispatch(fetchCurrentUser());
+    };
 
-  initUser();
+    initUser();
 
-  // בדיקה מחזורית לטוקן
-  const interval = setInterval(async () => {
-    const expiry = localStorage.getItem("tokenExpiry");
-    if (!expiry || Date.now() > Number(expiry)) {
-      localStorage.clear();
-      dispatch({ type: "USER_LOGIN_FAIL", payload: "Token expired" });
-      navigate("/login");
-    }
-  }, 30000);
+    const interval = setInterval(async () => {
+      const expiry = localStorage.getItem("tokenExpiry");
+      if (!expiry || Date.now() > Number(expiry)) {
+        localStorage.clear();
+        dispatch({ type: "USER_LOGIN_FAIL", payload: "Token expired" });
+      }
+    }, 30000);
 
-  return () => clearInterval(interval);
-}, [dispatch, navigate]);
+    return () => clearInterval(interval);
+  }, [dispatch]);
 
   return (
-    <>
-      <main className="app-container main-content">
+    <div className="page-container">
+      <div className="content-wrap">
         <Header />
         <Outlet location={background || location} />
-      </main>
+        {background && <SearchProduct />}
+        {!background && location.pathname === "/searchproduct" && <SearchProduct />}
+      </div>
       <Footer />
-
-      {background && <SearchProduct />}
-      {!background && location.pathname === "/searchproduct" && <SearchProduct />}
-    </>
+    </div>
   );
 }

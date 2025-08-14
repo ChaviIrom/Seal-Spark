@@ -8,8 +8,6 @@ import { addContact } from '../../../Redux/Action/contactUsAction';
 
 export default function ContactUs() {
   const dispatch = useDispatch();
-
-  // קבלת המשתמש המחובר מתוך Redux
   const currentUser = useSelector((state) => state.users?.currentUser);
 
   const [name, setName] = useState('');
@@ -18,14 +16,11 @@ export default function ContactUs() {
 
   const handleSubmit = () => {
     if (!name || !phone) return;
-
     dispatch(addContact({ name, phone }));
     setSubmitted(true);
     setName('');
     setPhone('');
   };
-
-  // אם אין משתמש מחובר – הצג הודעה
 
   return (
     <div className="main-contact-layout">
@@ -34,39 +29,45 @@ export default function ContactUs() {
       </div>
 
       <div className="right-content">
-        <div className="form-section">
-          <h2 className='form-text'>?מעדיפים שנחזור אליכם</h2>
-          <input
-            className='form-text-input'
-            type="text"
-            placeholder="שם"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            className='form-text-input'
-            type="tel"
-            placeholder="טלפון"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <button className='form-button' onClick={handleSubmit}>שליחה</button>
+        {/* קונטיינר טופס + הודעות */}
+        <div className="form-wrapper">
+          <div className="form-section">
+            <h2 className='form-text'>?מעדיפים שנחזור אליכם</h2>
 
-          {submitted && currentUser && (
-            <div className="success-message">
-              <h3>✅ הפנייה התקבלה בהצלחה!</h3>
-              <p>צוות <strong>SEAL SPARK</strong> יחזור אליכם בהקדם.</p>
-            </div>
-          )}
-          {submitted && !currentUser &&
-          (
-            <div className="not-logged-in-message">
-              <h2>🔒 על מנת לשלוח פנייה, יש להתחבר למערכת.</h2>
-            </div>
-          )}
+            <input
+              className='form-text-input'
+              type="text"
+              placeholder="שם"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              className='form-text-input'
+              type="tel"
+              placeholder="טלפון"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            <button className='form-button' onClick={handleSubmit}>שליחה</button>
+          </div>
 
+          {/* הודעות */}
+          <div className="message-container">
+            {submitted && currentUser && (
+              <div className="success-message">
+                <h3>✅ הפנייה התקבלה בהצלחה!</h3>
+                <p>צוות <strong>SEAL SPARK</strong> יחזור אליכם בהקדם.</p>
+              </div>
+            )}
+            {submitted && !currentUser && (
+              <div className="not-logged-in-message">
+                <h2>🔒 על מנת לשלוח פנייה, יש להתחבר למערכת.</h2>
+              </div>
+            )}
+          </div>
         </div>
 
+        {/* אייקונים */}
         <div className="contact-icons-container">
           <h1 className="contact-header">יצירת קשר</h1>
           <div className="contact-icon-line">
