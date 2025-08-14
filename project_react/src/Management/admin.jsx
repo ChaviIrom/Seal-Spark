@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import '../../src/styles/ButtonAdmin.css'
+import '../../src/styles/buttonAdmin.css'
 
 export default function ButtonAdmin() {
 
