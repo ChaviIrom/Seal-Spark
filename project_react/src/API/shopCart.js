@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/shopCart";
+const BASE_URL = `${import.meta.env.VITE_API_URL}/shopCart`;
 const getToken = () => localStorage.getItem('accessToken');
 
 export const getList = async () => {

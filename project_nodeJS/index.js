@@ -10,10 +10,27 @@ import ContactUs from './Routers/ContactUsRouter.js'
 import connectDB from "./database.js";
 
 const app = express()
-const port = 3000;
+const port = process.env.PORT || 3000;
 connectDB();
 
-app.use(cors())
+const allowedOrigins = [
+  'http://localhost:5176',
+  'http://localhost:5177',
+  'https://sealspark.onrender.com'
+];
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
+
 app.use(bodyParser.json());
 
 app.use('/users', UsersRouter)

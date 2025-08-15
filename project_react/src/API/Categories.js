@@ -1,5 +1,5 @@
 const getToken = () => localStorage.getItem('accessToken');
-const BASE_URL = "http://localhost:3000/categories";
+const BASE_URL = `${import.meta.env.VITE_API_URL}/categories`;
 
 export const getList = async () => {
   try {

@@ -1,5 +1,7 @@
 const getToken = () => localStorage.getItem('accessToken');
-const BASE_URL = "http://localhost:3000/users";
+const BASE_URL = `${import.meta.env.VITE_API_URL}/users`;
+
+console.log('BASE_URL = ',BASE_URL)
 
 export const getList = async () => {
   try {
@@ -28,6 +30,7 @@ export const getList = async () => {
 export const getById = async (id) => {
   try {
     const token = getToken();
+    console.log('BASE_URL = ',BASE_URL)
     const response = await fetch(`${BASE_URL}/getById/${id}`, {
       headers: {
         'Authorization': `Bearer ${token}`,
