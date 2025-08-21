@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchContact } from '../Redux/Action/contactUsAction'; // תוודאי שזה הנתיב הנכון
-import "../styles/seeUsers.css"; // אפשר להשתמש באותו עיצוב כמו משתמשים
+import { fetchContact } from '../../redux/action/contactUsAction'; // תוודאי שזה הנתיב הנכון
+import '../../styles/seeUsers.css'; // אפשר להשתמש באותו עיצוב כמו משתמשים
 
 export default function SeeContactUs() {
   const dispatch = useDispatch();

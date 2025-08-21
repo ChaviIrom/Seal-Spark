@@ -2,12 +2,12 @@ import { useState , useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import { addToCart } from '../../Redux/Action/shopCartActions.js';
+import { addToCart } from '../../redux/action/shopCartActions.js';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
-import { getByCategory } from '../../API/products.js'
-import imageShpe from '../../../public/Pictures/HomePage/icons8-shopping-bag-50.png'
+import { getByCategory } from '../../api/products.js'
+import imageShpe from '../../../public/pictures/HomePage/icons8-shopping-bag-50.png'
 import '../../styles/DesignNav.css';
 import '../../styles/DesignCategories.css'
 

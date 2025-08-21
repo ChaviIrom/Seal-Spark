@@ -1,7 +1,7 @@
 import {
     getList,
     add
-} from '../../API/contactUs';
+} from '../../api/contactUs';
 
 export const fetchContact = () => async (dispatch) => {
   try {

@@ -22,7 +22,7 @@ export default function Nav() {
   </div>
     <img
     className="welcome-image"
-    src="../Pictures/HomePage/עמוד הבית 1.png"
+    src="../pictures/HomePage/עמוד הבית 1.png"
     alt="תמונה של מתנות"
   />
 </div>

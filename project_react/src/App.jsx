@@ -1,25 +1,25 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from './routs/root.jsx'
-import Branches from '../src/component/Branches.jsx'
+import Branches from './components/footer/Branches.jsx'
 import Home from './pages/HomePage/AppHomePage.jsx'
 import About from './pages/About/About.jsx';
-import ContactUs from './component/Footer/ContactUs/ContactUs.jsx'
+import ContactUs from './components/footer/ContactUs/ContactUs.jsx'
 import Orders from './pages/Orders/OrderConfirmation.jsx';
-import OrdersDetails from '../src/pages/Orders/OrderDetails.jsx'
-import SearchProduct from './component/Header/searchProdect.jsx';
-import ShopCart from './component/Header/shopCart.jsx'
+import OrdersDetails from './pages/Orders/OrderDetails.jsx'
+import SearchProduct from './components/header/SearchProdect.jsx';
+import ShopCart from './components/header/ShopCart.jsx'
 import CategoryId from './pages/Categories/CategoryDisplay.jsx'
-import Category from '../src/Grid/nav.jsx';
+import Category from './Grid/nav.jsx';
 import Register from './pages/Register.jsx';
 import Login from './pages/Login.jsx';
 import ProductDetails from './pages/Categories/ProductDetails.jsx'
-import Admin from '../src/Management/admin.jsx'
-import AddCategories from '../src/Management/addCategory.jsx'
-import AddProduct from '../src/Management/addProduct.jsx'
-import SeeUsers from '../src/Management/seeUsers.jsx'
-import SeeOrders from '../src/Management/seeOrders.jsx'
-import SeeContuctUs from '../src/Management/seeContactUs.jsx'   
+import Admin from './pages/Management/Admin.jsx'
+import AddCategories from './pages/Management/AddCategory.jsx'
+import AddProduct from './pages/Management/AddProduct.jsx'
+import SeeUsers from './pages/Management/SeeUsers.jsx'
+import SeeOrders from './pages/Management/SeeOrders.jsx'
+import SeeContuctUs from './pages/Management/SeeContactUs.jsx'
 
 export default function App() {
   // const location = useLocation();

@@ -5,8 +5,8 @@ import '../styles/DesignHeader.css';
 import '../App.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchCurrentUser } from '../Redux/Action/usersAction.js';
-import SearchProduct from '../component/Header/searchProdect.jsx';
+import { fetchCurrentUser } from '../redux/action/usersAction.js';
+import SearchProduct from '../components/header/SearchProdect.jsx';
 
 export default function Root() {
   const location = useLocation();

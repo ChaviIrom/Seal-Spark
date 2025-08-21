@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct } from '../Redux/Action/productsAction'
-import { fetchCategories } from '../Redux/Action/categoriesAction';
-import { fetchProducts } from "../Redux/Action/productsAction";
+import { fetchCategories } from '../../redux/action/categoriesAction';
+import { fetchProducts } from "../../redux/action/productsAction";
+import { addProduct } from '../../redux/action/productsAction'; // יש להוסיף פונקציה זו לקובץ productsAction.js
 import { useNavigate } from "react-router-dom";
-import '../styles/Product.css'
+import '../../styles/Product.css'
 
 export default function AddProduct() {
   const dispatch = useDispatch();

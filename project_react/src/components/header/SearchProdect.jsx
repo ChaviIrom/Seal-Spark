@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { getList } from '../../API/products.js'; 
+import { getList } from '../../api/products.js'; 
 import "../../styles/DesignSearch.css";
 
 export default function SearchProduct() {

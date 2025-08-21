@@ -6,7 +6,7 @@ import {
   getById,
   login,
   CurrentUser
-} from '../../API/Users';
+} from '../../api/Users';
 import { jwtDecode } from 'jwt-decode';
 
 // שליפת כל המשתמשים

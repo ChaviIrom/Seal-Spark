@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import '../../styles/DesignOrders.css';
 import '../../../src/styles/DesignAddOrder.css';
-import { addOrder } from '../../Redux/Action/ordersAction';
+import { addOrder } from '../../redux/action/ordersAction';
 
 export default function OrderPage() {
   const location = useLocation();

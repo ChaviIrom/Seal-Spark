@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
-import { addUser } from '../Redux/Action/usersAction'
+import { addUser } from '../redux/action/usersAction'
 import '../styles/DesigenLoginRegister.css';
 import SuccessPopup from '../pages/SuccessPopup.jsx';
 

@@ -1,13 +1,12 @@
 import React from 'react';
-import LinkBranche from '../../public/Pictures/Branche/חנות.png';
-import '../styles/DesignBranche.css';
+import '../../styles/DesignBranche.css';
 
 export default function Branche() {
   return (
     <section className="branches-section">
       <div className="container">
         <div className="image-wrapper">
-          <img src={LinkBranche} alt="LinkBranche" className="main-image" />
+          <img src={"/pictures/Branche/חנות.png"} alt="LinkBranche" className="main-image" />
         </div>
 
         <div className="branches">

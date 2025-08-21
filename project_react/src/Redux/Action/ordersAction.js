@@ -3,7 +3,7 @@ import {
   add,
   getById,
   getByOrderId
-} from '../../API/orders';
+} from '../../api/orders';
 
 // שליפת כל ההזמנות
 export const fetchOrders = () => async (dispatch) => {

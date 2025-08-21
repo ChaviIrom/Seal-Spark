@@ -1,11 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { thunk } from 'redux-thunk';
-import { cartReducer } from './Reducers/shopCartReducer';
-import { usersReducer }  from './Reducers/usersReducer'
-import productsReducer  from './Reducers/productsReducer';
-import categoriesReducer  from './Reducers/categoriesReducer';
-import ordersReducer from './Reducers/ordersReducer';
-import contuctUsReducer from './Reducers/contuctUsReducer';
+import { cartReducer } from './reducers/ShopCartReducer';
+import { usersReducer }  from './reducers/UsersReducer'
+import productsReducer  from './reducers/ProductsReducer';
+import categoriesReducer  from './reducers/CategoriesReducer';
+import ordersReducer from './reducers/OrdersReducer';
+import contuctUsReducer from './reducers/ContuctUsReducer';
 
 const reducer = combineReducers({
   cart: cartReducer,

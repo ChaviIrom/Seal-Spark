@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchOrders } from '../Redux/Action/ordersAction';
-import { fetchUsers } from '../Redux/Action/usersAction';
-import { fetchProducts } from '../Redux/Action/productsAction';
+import { fetchOrders } from '../../redux/action/ordersAction';
+import { fetchUsers } from '../../redux/action/usersAction';
+import { fetchProducts } from '../../redux/action/productsAction';
 import { Link } from "react-router-dom";
-import '../styles/seeOrders.css';
+import '../../styles/seeOrders.css';
 
 export default function SeeOrders() {
   const dispatch = useDispatch();

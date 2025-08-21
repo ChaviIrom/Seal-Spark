@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from '../Redux/Action/usersAction';
-import "../styles/seeUsers.css"; 
+import { fetchUsers } from '../../redux/action/usersAction';
+import "../../styles/seeUsers.css"; 
 
 export default function SeeUsers() {
   const dispatch = useDispatch();

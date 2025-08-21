@@ -2,10 +2,10 @@ import React from 'react';
 import '../styles/DesignHeader.css';
 import { Link, useNavigate, useLocation } from 'react-router-dom';  // הוספתי useLocation
 import { useSelector } from 'react-redux';
-import IconSearchProduct from '../component/Header/IconInputSearch.jsx'
-import Logo from '../component/Header/Logo.jsx'
-import IconButtonWithBadge from '../component/Header/IconButtonWithBadge.jsx';
-import imageUser from '../../public/Pictures/HomePage/icons8-user-50.png';
+// import IconSearchProduct from '../component/Header/IconInputSearch.jsx' // קובץ לא קיים, יש להוסיף/לתקן בעתיד
+import Logo from '../components/Header/Logo.jsx'
+import IconButtonWithBadge from '../components/Header/IconButtonWithBadge.jsx';
+import imageUser from '../../public/pictures/HomePage/icons8-user-50.png';
 import Categories from '../pages/Categories/Menu.jsx';
 import SettingsIcon from '@mui/icons-material/Settings';
 // הוסר ייבוא של SearchProduct כי כבר לא צריך לקרוא אותו כאן
@@ -56,7 +56,7 @@ const openSearch = () => {
           className="search-button"
           style={{ background: 'none', border: 'none', cursor: 'pointer' }}
         >
-          <IconSearchProduct />
+          {/* <IconSearchProduct /> */}
         </button>
 
         <Link to="/shopcart" className="shope-button">

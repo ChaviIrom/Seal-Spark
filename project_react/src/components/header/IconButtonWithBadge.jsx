@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import imageShpe from '../../../public/Pictures/HomePage/icons8-shopping-bag-50.png'
+import imageShpe from '../../../public/pictures/HomePage/icons8-shopping-bag-50.png'
 import '../../styles/DesignHeader.css'
 
 export default function ShopeButton() {

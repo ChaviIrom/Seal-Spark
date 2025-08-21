@@ -2,7 +2,7 @@ import {
   getList,
   add,
   getById
-} from '../../API/Categories.js';
+} from '../../api/Categories.js';
 
 export const fetchCategories = () => async (dispatch) => {
   try {

@@ -5,8 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   incrementQuantity,
   decrementQuantity,
-} from "../../Redux/Action/shopCartActions.js";
-import QuantitySelector from '../../component/QuantitySelector.jsx';
+} from "../../redux/action/shopCartActions.js";
+import QuantitySelector from '../../components/QuantitySelector.jsx';
 
 export default function ShopCart() {
   const cartItems = useSelector((state) => state.cart.cartItems);

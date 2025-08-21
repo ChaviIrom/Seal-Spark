@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchByOrderId } from '../../Redux/Action/ordersAction';
-import { fetchProducts } from '../../Redux/Action/productsAction';
-import '../../../src/styles/DesignOrderDetails.css'
+import { fetchByOrderId } from '../../redux/action/ordersAction';
+import { fetchProducts } from '../../redux/action/productsAction';
+// import '../../styles/DesignOrderDetails.css'; // קובץ לא קיים, יש להוסיף בעתיד
 
 const OrderDetails = () => {
   const { orderId } = useParams();

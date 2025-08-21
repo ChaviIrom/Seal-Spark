@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../Redux/Action/shopCartActions.js';
+import { addToCart } from '../../redux/action/shopCartActions.js';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import { getById } from '../../API/products.js';
+import { getById } from '../../api/products.js';
 import '../../styles/ProductDetails.css';
-import QuantitySelector from '../../component/QuantitySelector.jsx';
+import QuantitySelector from '../../components/QuantitySelector.jsx';
 
 export default function ProductDetails() {
   const { id } = useParams();

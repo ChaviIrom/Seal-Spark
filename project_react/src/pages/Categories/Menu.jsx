@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from "react";
-import { getList } from '../../API/Categories.js';
+import { getList } from '../../api/Categories.js';
 import '../../styles/DesignLinkCategorise.css';
 import '../../styles/DesigenMenu.css';
 
