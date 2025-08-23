@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchByOrderId } from '../../redux/action/ordersAction';
 import { fetchProducts } from '../../redux/action/productsAction';
-// import '../../styles/DesignOrderDetails.css'; // קובץ לא קיים, יש להוסיף בעתיד
+import '../../styles/designOrderDetails.css'; // קובץ לא קיים, יש להוסיף בעתיד
 
 const OrderDetails = () => {
   const { orderId } = useParams();

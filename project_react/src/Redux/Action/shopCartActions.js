@@ -1,36 +1,56 @@
-export const addToCart = (product) => (dispatch, getState) => {
-  dispatch({
-    type: 'ADD_TO_CART',
-    payload: {
-      productId: product.id, // שם זהה לשדה במסד
-      name: product.name,
-      price: product.price,
-      image: product.image,
-      quantity: product.quantity || 1,
-      customName: product.customName || '',
-      customMessage: product.customMessage || '',
-      selectedFont: product.selectedFont || '',
-      selectedLanguage: product.selectedLanguage || ''
-    },
-  });
-  localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+import { add as addToCartApi, removeItem as removeItemApi, update as updateCartApi } from "../../api/shopCart.js";
+
+// הוספה לסל
+export const addToCart = (product) => async (dispatch, getState) => {
+  const cartItem = {
+    productId: product.id,
+    name: product.name,
+    price: product.price,
+    image: product.image,
+    quantity: product.quantity || 1,
+    customName: product.customName || '',
+    customMessage: product.customMessage || '',
+    selectedFont: product.selectedFont || '',
+    selectedLanguage: product.selectedLanguage || ''
+  };
+
+  try {
+    const updatedCart = await addToCartApi({ items: [cartItem] });
+    dispatch({ type: 'SET_CART', payload: updatedCart.items });
+  } catch (err) {
+    console.error("Error adding to cart:", err);
+  }
 };
 
-export const removeFromCart = (id) => (dispatch, getState) => {
-  dispatch({
-    type: "REMOVE_FROM_CART",
-    payload: id,
-  });
-
-  const {
-    cart: { cartItems },
-  } = getState();
-  localStorage.setItem("cartItems", JSON.stringify(cartItems));
-}
-export const incrementQuantity = (id) => (dispatch) => {
-  dispatch({ type: 'INCREMENT_QUANTITY', payload: id });
+// מחיקה
+export const removeFromCart = (productId) => async (dispatch, getState) => {
+  try {
+    await removeItemApi({ productId });
+    const cartItems = getState().cart.cartItems.filter(i => i.productId !== productId);
+    dispatch({ type: 'SET_CART', payload: cartItems });
+  } catch (err) {
+    console.error("Error removing from cart:", err);
+  }
 };
 
-export const decrementQuantity = (id) => (dispatch) => {
-  dispatch({ type: 'DECREMENT_QUANTITY', payload: id });
+// עדכון כמות
+export const incrementQuantity = (item) => async (dispatch) => {
+  const newQty = item.quantity + 1;
+  try {
+    await updateCartApi(item._id, { quantity: newQty });
+    dispatch({ type: 'UPDATE_QUANTITY', payload: { productId: item.productId, quantity: newQty } });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const decrementQuantity = (item) => async (dispatch) => {
+  const newQty = item.quantity - 1;
+  if (newQty < 1) return; // לא יוריד ל־0
+  try {
+    await updateCartApi(item._id, { quantity: newQty });
+    dispatch({ type: 'UPDATE_QUANTITY', payload: { productId: item.productId, quantity: newQty } });
+  } catch (err) {
+    console.error(err);
+  }
 };

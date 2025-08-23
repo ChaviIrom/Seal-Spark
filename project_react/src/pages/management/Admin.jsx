@@ -3,7 +3,7 @@ import '../../styles/buttonAdmin.css';
 
 export default function ButtonAdmin() {
 
-  const pathImg = '../../public/Pictures/Logo/Icon.png';
+  const pathImg = '../../../public/pictures/Logo/Icon.png';
 
   return (
     <div className="buttonAdmin">

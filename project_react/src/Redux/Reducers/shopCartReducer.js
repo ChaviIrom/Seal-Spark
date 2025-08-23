@@ -81,6 +81,24 @@ export const cartReducer = (state = initialState, action) => {
           0
         ),
       };
+      case "SET_CART":
+  return {
+    ...state,
+    cartItems: action.payload,
+    totalPrice: action.payload.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  };
+
+case "UPDATE_QUANTITY":
+  const updatedItems = state.cartItems.map(item =>
+    item.productId === action.payload.productId
+      ? { ...item, quantity: action.payload.quantity }
+      : item
+  );
+  return {
+    ...state,
+    cartItems: updatedItems,
+    totalPrice: updatedItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  };
 
     default:
       return state;
