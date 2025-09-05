@@ -1,107 +1,76 @@
+// shopCartReducer.js
+
 const initialState = {
   cartItems: [],
   totalPrice: 0,
+  error: null
 };
 
-export const cartReducer = (state = initialState, action) => {
+// פונקציה לחישוב סה"כ
+const calculateTotal = (items) => {
+  return items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+};
+
+const shopCartReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADD_TO_CART":
-    const existingItem = state.cartItems.find(
-      (item) => item.productId === action.payload.productId
-    );
-      let updatedCartItems;
-
-      if (existingItem) {
-      updatedCartItems = state.cartItems.map((item) =>
-      item.productId === action.payload.productId
-        ? { ...item, quantity: item.quantity + (action.payload.quantity || 1) }
-        : item
-    );
-
-      } else {
-        updatedCartItems = [
-          ...state.cartItems,
-          {
-            ...action.payload,
-            quantity: action.payload.quantity || 1,
-          },
-        ];
-      }
-
+    case "SET_CART":
       return {
         ...state,
-        cartItems: updatedCartItems,
-        totalPrice: updatedCartItems.reduce(
-          (sum, item) => sum + item.price * item.quantity,
-          0
-        ),
+        cartItems: action.payload,
+        totalPrice: calculateTotal(action.payload),
+        error: null
+      };
+
+    case "ADD_TO_CART":
+      const exists = state.cartItems.find(i => i.productId === action.payload.productId);
+      let updatedCart;
+      if (exists) {
+        updatedCart = state.cartItems.map(i =>
+          i.productId === action.payload.productId
+            ? { ...i, quantity: i.quantity + action.payload.quantity }
+            : i
+        );
+      } else {
+        updatedCart = [...state.cartItems, action.payload];
+      }
+      return {
+        ...state,
+        cartItems: updatedCart,
+        totalPrice: calculateTotal(updatedCart),
+        error: null
       };
 
     case "REMOVE_FROM_CART":
-      const filteredItems = state.cartItems.filter(
-        (item) => item.productId !== action.payload
+      const filteredCart = state.cartItems.filter(i => i.productId !== action.payload);
+      return {
+        ...state,
+        cartItems: filteredCart,
+        totalPrice: calculateTotal(filteredCart),
+        error: null
+      };
+
+    case "UPDATE_QUANTITY":
+      const updatedQtyCart = state.cartItems.map(i =>
+        i.productId === action.payload.productId
+          ? { ...i, quantity: action.payload.quantity }
+          : i
       );
       return {
         ...state,
-        cartItems: filteredItems,
-        totalPrice: filteredItems.reduce(
-          (sum, item) => sum + item.price * item.quantity,
-          0
-        ),
+        cartItems: updatedQtyCart,
+        totalPrice: calculateTotal(updatedQtyCart),
+        error: null
       };
 
-    case "INCREMENT_QUANTITY":
-      const incCartItems = state.cartItems.map((item) =>
-        item.productId === action.payload
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      );
+    case "CART_ERROR":
       return {
         ...state,
-        cartItems: incCartItems,
-        totalPrice: incCartItems.reduce(
-          (sum, item) => sum + item.price * item.quantity,
-          0
-        ),
+        error: action.payload
       };
-
-    case "DECREMENT_QUANTITY":
-      const decCartItems = state.cartItems
-        .map((item) =>
-          item.productId === action.payload
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        )
-        .filter((item) => item.quantity > 0);
-      return {
-        ...state,
-        cartItems: decCartItems,
-        totalPrice: decCartItems.reduce(
-          (sum, item) => sum + item.price * item.quantity,
-          0
-        ),
-      };
-      case "SET_CART":
-  return {
-    ...state,
-    cartItems: action.payload,
-    totalPrice: action.payload.reduce((sum, item) => sum + item.price * item.quantity, 0)
-  };
-
-case "UPDATE_QUANTITY":
-  const updatedItems = state.cartItems.map(item =>
-    item.productId === action.payload.productId
-      ? { ...item, quantity: action.payload.quantity }
-      : item
-  );
-  return {
-    ...state,
-    cartItems: updatedItems,
-    totalPrice: updatedItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
-  };
 
     default:
       return state;
   }
 };
 
+export default shopCartReducer;

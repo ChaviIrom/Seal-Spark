@@ -1,14 +1,14 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { thunk } from 'redux-thunk';
-import { cartReducer } from './reducers/shopCartReducer';
-import { usersReducer }  from './reducers/usersReducer'
-import productsReducer  from './reducers/productsReducer';
-import categoriesReducer  from './reducers/categoriesReducer';
-import ordersReducer from './reducers/ordersReducer';
-import contuctUsReducer from './reducers/contuctUsReducer';
+import {thunk} from 'redux-thunk';
+import  shopCartReducer  from './reducers/shopCartReducer.js';
+import { usersReducer }  from './reducers/usersReducer.js'
+import productsReducer  from './reducers/productsReducer.js';
+import categoriesReducer  from './reducers/categoriesReducer.js';
+import ordersReducer from './reducers/ordersReducer.js';
+import contuctUsReducer from './reducers/contuctUsReducer.js';
 
 const reducer = combineReducers({
-  cart: cartReducer,
+  cart: shopCartReducer,
   categories: categoriesReducer,
   users: usersReducer,
   orders: ordersReducer,

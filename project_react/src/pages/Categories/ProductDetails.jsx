@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../redux/action/shopCartActions.js';
+import { useSelector } from 'react-redux';
+import { addToCartLocal } from '../../redux/action/shopCartActions.js';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { getById } from '../../api/products.js';
@@ -9,6 +10,8 @@ import '../../styles/ProductDetails.css';
 import QuantitySelector from '../../components/QuantitySelector.jsx';
 
 export default function ProductDetails() {
+  const currentUser = useSelector((state) => state.users.currentUser);
+
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -34,21 +37,21 @@ export default function ProductDetails() {
   }, [id]);
 
   const handleAddToCart = () => {
-    const customizedProduct = {
-      // id: product.id || product.id,    // לשמור id לשימוש ב-Redux
-      productId: product.id , // להוסיף לפי הסכמה במונגו
-      quantity,
-      customName,
-      customMessage,
-      selectedFont,
-      selectedLanguage,
-      name: product.name,
-      price: product.price,
-      image: product.image
-    };
-    dispatch(addToCart(customizedProduct));
-    setOpenSnackbar(true);
+  const customizedProduct = {
+    productId: product.id,
+    quantity,
+    customName,
+    customMessage,
+    selectedFont,
+    selectedLanguage,
+    name: product.name,
+    price: product.price,
+    image: product.image
   };
+  dispatch(addToCartLocal(customizedProduct));
+  setOpenSnackbar(true);
+};
+
 
   const handleCloseSnackbar = (event, reason) => {
     if (reason === 'clickaway') return;
