@@ -13,20 +13,18 @@ const app = express()
 const port = process.env.PORT || 3000;
 connectDB();
 
-const allowedOriginsProd = [
-  'https://sealspark.onrender.com'
-];
-
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin) return callback(null, true); // Postman / curl
-    if (origin.match(/^http:\/\/localhost:\d+$/)) return callback(null, true); // כל localhost
-    if (allowedOriginsProd.includes(origin)) return callback(null, true); // production React
+    if (!origin) return callback(null, true);               // Postman / curl
+    if (origin.match(/^http:\/\/localhost:\d+$/)) return callback(null, true); // כל localhost בפיתוח
+    if (allowedOriginsProd.includes(origin)) return callback(null, true);      // production React
     return callback(new Error('Not allowed by CORS'));
   },
-
   credentials: true
 }));
+
+// טיפול ב-preflight OPTIONS
+app.options('*', cors());
 
 
 app.use(bodyParser.json());

@@ -1,5 +1,3 @@
-// shopCartReducer.js
-
 const initialState = {
   cartItems: [],
   totalPrice: 0,

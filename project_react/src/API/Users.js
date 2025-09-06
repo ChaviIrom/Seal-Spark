@@ -1,5 +1,7 @@
 const getToken = () => localStorage.getItem('accessToken');
-const BASE_URL = `${import.meta.env.VITE_API_URL}/users`;
+const BASE_URL = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/users`
+  : '/api/users';
 
 console.log('BASE_URL = ',BASE_URL)
 

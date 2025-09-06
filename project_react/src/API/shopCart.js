@@ -1,5 +1,7 @@
-const BASE_URL = `${import.meta.env.VITE_API_URL}/shopCart`;
 const getToken = () => localStorage.getItem('accessToken');
+const BASE_URL = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL}/shopCart`
+  : '/api/shopCart';
 
 export const getList = async () => {
   try {
