@@ -14,12 +14,12 @@ import Category from './Grid/nav.jsx';
 import Register from './pages/Register.jsx';
 import Login from './pages/Login.jsx';
 import ProductDetails from './pages/Categories/ProductDetails.jsx'
-import Admin from './pages/Management/Admin.jsx'
-import AddCategories from './pages/Management/AddCategory.jsx'
-import AddProduct from './pages/Management/AddProduct.jsx'
-import SeeUsers from './pages/Management/SeeUsers.jsx'
-import SeeOrders from './pages/Management/SeeOrders.jsx'
-import SeeContuctUs from './pages/Management/SeeContactUs.jsx'
+import Admin from './pages/management/Admin.jsx'
+import AddCategories from './pages/management/AddCategory.jsx'
+import AddProduct from './pages/management/AddProduct.jsx'
+import SeeUsers from './pages/mmnagement/SeeUsers.jsx'
+import SeeOrders from './pages/management/SeeOrders.jsx'
+import SeeContuctUs from './pages/management/SeeContactUs.jsx'
 
 export default function App() {
   // const location = useLocation();
