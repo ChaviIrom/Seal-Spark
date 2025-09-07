@@ -18,7 +18,6 @@ export default function CategoryDisplay() {
   const dispatch = useDispatch();
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
-  // Fetch products by category
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -45,7 +44,7 @@ export default function CategoryDisplay() {
   return (
     <>
       <div className='nav-design-background'>
-        <p className='nav-categories-design-text'>{categoryId}</p>
+        <p className='nav-categories-design-text'></p>
       </div>
       <br /><br />
       <Box
