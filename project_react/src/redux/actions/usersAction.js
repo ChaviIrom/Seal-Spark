@@ -2,11 +2,11 @@ import {
   getList,
   add,
   update,
-  Delete,
+  delete as Delete,
   getById,
   login,
   CurrentUser
-} from '../../api/Users';
+} from '../../api/users';
 import { jwtDecode } from 'jwt-decode';
 
 // שליפת כל המשתמשים
