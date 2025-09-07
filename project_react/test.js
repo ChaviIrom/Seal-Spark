@@ -1,34 +1,37 @@
-import fs from 'fs';
-import path from 'path';
-import { execSync } from 'child_process';
+import fs from "fs";
+import path from "path";
+import { execSync } from "child_process";
 
-const projectDir = './src'; // תיקיית הפרויקט שלך
+function syncCase(dir) {
+  const files = fs.readdirSync(dir);
 
-function walk(dir) {
-  let results = [];
-  const list = fs.readdirSync(dir);
-  list.forEach((file) => {
-    const filePath = path.join(dir, file);
-    const stat = fs.statSync(filePath);
-    if (stat && stat.isDirectory()) {
-      results = results.concat(walk(filePath));
+  files.forEach(file => {
+    const fullPath = path.join(dir, file);
+    const stat = fs.statSync(fullPath);
+
+    if (stat.isDirectory()) {
+      syncCase(fullPath); // רקורסיה על תיקיות
     } else {
-      results.push(filePath);
+      const correctCase = file; // השם כפי שהוא צריך להיות
+      const actualCase = fs.readdirSync(path.dirname(fullPath)).find(f => f.toLowerCase() === file.toLowerCase());
+
+      if (actualCase && actualCase !== correctCase) {
+        const tempName = path.join(path.dirname(fullPath), `tmp_${Date.now()}_${file}`);
+        const targetName = path.join(path.dirname(fullPath), correctCase);
+
+        try {
+          execSync(`git mv -f "${fullPath}" "${tempName}"`);
+          execSync(`git mv -f "${tempName}" "${targetName}"`);
+          console.log(`Synced: ${file}`);
+        } catch (err) {
+          console.error(`Error syncing ${file}:`, err.message);
+        }
+      }
     }
   });
-  return results;
 }
 
-const files = walk(projectDir);
+// התחלת סינכרון מהתיקיה הראשית של src
+syncCase(path.join(process.cwd(), "src"));
+console.log("Git case sync finished!");
 
-files.forEach((file) => {
-  const gitFile = file.replace(/\\/g, '/'); // Windows support
-  try {
-    execSync(`git mv -f ${gitFile} ${gitFile}`);
-    console.log(`Synced: ${gitFile}`);
-  } catch (err) {
-    console.error(`Error syncing ${gitFile}: ${err.message}`);
-  }
-});
-
-console.log('Git case sync finished!');
