@@ -2,7 +2,7 @@ import {
   getList,
   add,
   update,
-  delete as Delete,
+  Delete,
   getById,
   login,
   CurrentUser
