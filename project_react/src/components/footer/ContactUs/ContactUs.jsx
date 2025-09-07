@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../../../styles/DesignContactUs.css';
-import imageContact from './pictures/ConcatUs/ContactUsImage.png';
-import IconPhone from './pictures/ConcatUs/טלפון.png';
-import IconEmail from './pictures/ConcatUs/מייל.png';
+// import imageContact from '../../../../public/pictures/ConcatUs/יצירת קשר.png';
+// import IconPhone from '../../../../public/pictures/ConcatUs/טלפון.png';
+// import IconEmail from '../../../../public/pictures/ConcatUs/מייל.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../../redux/actions/contactUsAction';
 
@@ -25,7 +25,7 @@ export default function ContactUs() {
   return (
     <div className="main-contact-layout">
       <div className="left-image-side">
-        <img src={imageContact} alt="צד" width={700} height={450} />
+        <img src='../../../../public/pictures/ConcatUs/יצירת קשר.png' alt="צד" width={700} height={450} />
       </div>
 
       <div className="right-content">
@@ -72,11 +72,11 @@ export default function ContactUs() {
           <h1 className="contact-header">יצירת קשר</h1>
           <div className="contact-icon-line">
             <span className="contact-text">0549950505</span>
-            <img src={IconPhone} alt="טלפון" />
+            <img src= '../../../../public/pictures/ConcatUs/טלפון.png' alt="טלפון" />
           </div>
           <div className="contact-icon-line">
             <span className="contact-text">officsealspark@gmail.com</span>
-            <img src={IconEmail} alt="מייל" />
+            <img src='../../../../public/pictures/ConcatUs/מייל.png' alt="מייל" />
           </div>
         </div>
       </div>
