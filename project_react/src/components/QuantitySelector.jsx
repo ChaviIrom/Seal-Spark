@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/DesignQuantitySelector.css';
+import '../styles/designQuantitySelector.css';
 
 export default function QuantitySelector({ quantity, onDecrement, onIncrement }) {
   return (

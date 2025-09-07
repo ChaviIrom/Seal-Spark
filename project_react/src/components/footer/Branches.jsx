@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/DesignBranche.css';
+import '../../styles/designBranche.css';
 
 export default function Branche() {
   return (

@@ -1,7 +1,7 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import Header from '../Grid/header.jsx';
-import Footer from '../Grid/footer.jsx';
-import '../styles/DesignHeader.css';
+import Header from '../grid/Header.jsx';
+import Footer from '../grid/Footer.jsx';
+import '../styles/designHeader.css';
 import '../App.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';

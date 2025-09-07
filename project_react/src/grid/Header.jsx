@@ -1,12 +1,12 @@
 import React from 'react';
-import '../styles/DesignHeader.css';
+import '../styles/designHeader.css';
 import { Link, useNavigate, useLocation } from 'react-router-dom';  // הוספתי useLocation
 import { useSelector } from 'react-redux';
 import IconSearchProduct from '../components/header/IconInputSearch.jsx' // קובץ לא קיים, יש להוסיף/לתקן בעתיד
-import Logo from '../components/Header/Logo.jsx'
-import IconButtonWithBadge from '../components/Header/IconButtonWithBadge.jsx';
+import Logo from '../components/header/Logo.jsx'
+import IconButtonWithBadge from '../components/header/IconButtonWithBadge.jsx';
 import imageUser from '../../public/pictures/HomePage/icons8-user-50.png';
-import Categories from '../pages/Categories/Menu.jsx';
+import Categories from '../pages/categories/Menu.jsx';
 import SettingsIcon from '@mui/icons-material/Settings';
 // הוסר ייבוא של SearchProduct כי כבר לא צריך לקרוא אותו כאן
 

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from "react";
-import { getList } from '../../api/Categories.js';
-import '../../styles/DesignLinkCategorise.css';
-import '../../styles/DesigenMenu.css';
+import { getList } from '../../api/categories.js';
+import '../../styles/designLinkCategorise.css';
+import '../../styles/desigenMenu.css';
 
 export default function Menu() {
   const [menuOpen, setMenuOpen] = useState(false);

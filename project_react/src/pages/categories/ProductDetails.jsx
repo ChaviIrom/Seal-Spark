@@ -6,7 +6,7 @@ import { addToCartLocal } from '../../redux/actions/shopCartActions.js';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { getById } from '../../api/products.js';
-import '../../styles/ProductDetails.css';
+import '../../styles/productDetails.css';
 import QuantitySelector from '../../components/QuantitySelector.jsx';
 
 export default function ProductDetails() {

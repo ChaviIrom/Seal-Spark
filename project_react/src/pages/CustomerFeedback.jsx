@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/CustomerFeedback.css';
+import '../styles/customerFeedback.css';
 
 const testimonials = [
   { id: 1, name: "דני לוי", text: "חוויה מעולה! שירות מצוין ומוצרים איכותיים." },

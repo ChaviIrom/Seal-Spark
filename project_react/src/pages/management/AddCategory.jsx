@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCategory } from '../../redux/actions/categoriesAction.js';
 import { fetchCategories } from '../../redux/actions/categoriesAction.js';
 import { useNavigate } from "react-router-dom";
-import '../../styles/Category.css'
+import '../../styles/category.css'
 
 export default function AddCategory() {
   const dispatch = useDispatch();

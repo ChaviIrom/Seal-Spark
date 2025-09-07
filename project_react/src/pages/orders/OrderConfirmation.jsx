@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import '../../styles/DesignOrders.css';
-import '../../../src/styles/DesignAddOrder.css';
+import '../../styles/designOrders.css';
+import '../../../src/styles/designAddOrder.css';
 import { addOrder } from '../../redux/actions/ordersAction';
 
 export default function OrderPage() {

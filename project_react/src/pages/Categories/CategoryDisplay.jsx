@@ -7,8 +7,8 @@ import { Link, useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { getByCategory } from '../../api/products.js';
 import imageShpe from '../../../public/pictures/HomePage/icons8-shopping-bag-50.png';
-import '../../styles/DesignNav.css';
-import '../../styles/DesignCategories.css';
+import '../../styles/designNav.css';
+import '../../styles/designCategories.css';
 
 export default function CategoryDisplay() {
   const { categoryId } = useParams();

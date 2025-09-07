@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../../styles/DesignContactUs.css';
+import '../../../styles/designContactUs.css';
 // import imageContact from '../../../../public/pictures/ConcatUs/יצירת קשר.png';
 // import IconPhone from '../../../../public/pictures/ConcatUs/טלפון.png';
 // import IconEmail from '../../../../public/pictures/ConcatUs/מייל.png';

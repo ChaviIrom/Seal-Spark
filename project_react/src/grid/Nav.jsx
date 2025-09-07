@@ -1,6 +1,6 @@
 
 import CustomerFeedback from '../pages/CustomerFeedback.jsx'
-import '../styles/DesignNav.css';
+import '../styles/designNav.css';
 import '../App.css'
 
 export default function Nav() {

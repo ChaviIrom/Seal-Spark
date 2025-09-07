@@ -1,6 +1,6 @@
 import React from 'react';
 import Sramp from './sramp.jsx';
-import '../../styles/DesignAbout.css';
+import '../../styles/designAbout.css';
 
 export default function About() {
   return (

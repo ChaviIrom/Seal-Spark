@@ -4,7 +4,7 @@ import { fetchCategories } from '../../redux/actions/categoriesAction';
 import { fetchProducts } from "../../redux/actions/productsAction";
 import { addProduct } from '../../redux/actions/productsAction'; // יש להוסיף פונקציה זו לקובץ productsAction.js
 import { useNavigate } from "react-router-dom";
-import '../../styles/Product.css'
+import '../../styles/product.css'
 
 export default function AddProduct() {
   const dispatch = useDispatch();
