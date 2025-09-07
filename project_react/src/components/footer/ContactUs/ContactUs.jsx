@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../../../styles/DesignContactUs.css';
-import imageContact from '../../../../public/pictures/ConcatUs/יצירת קשר.png';
-import IconPhone from '../../../../public/pictures/ConcatUs/טלפון.png';
-import IconEmail from '../../../../public/pictures/ConcatUs/מייל.png';
+import imageContact from './pictures/ConcatUs/ContactUsImage.png';
+import IconPhone from './pictures/ConcatUs/טלפון.png';
+import IconEmail from './pictures/ConcatUs/מייל.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../../redux/actions/contactUsAction';
 
