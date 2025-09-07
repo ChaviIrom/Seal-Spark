@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import imageShpe from '../../../public/pictures/HomePage/icons8-shopping-bag-50.png'
-import '../../styles/DesignHeader.css'
+import '../../styles/designHeader.css'
 
 export default function ShopeButton() {
   const navigate = useNavigate();

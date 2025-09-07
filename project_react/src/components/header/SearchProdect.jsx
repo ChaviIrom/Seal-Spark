@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { getList } from '../../api/products.js'; 
-import "../../styles/DesignSearch.css";
+import "../../styles/designSearch.css";
 
 export default function SearchProduct() {
   const [query, setQuery] = useState("");

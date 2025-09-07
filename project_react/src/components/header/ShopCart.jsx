@@ -1,5 +1,5 @@
-import '../../styles/DesignHeader.css';
-import '../../styles/DesignShopCart.css';
+import '../../styles/designHeader.css';
+import '../../styles/designShopCart.css';
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
