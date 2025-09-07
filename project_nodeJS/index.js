@@ -6,12 +6,16 @@ import OrdersRouter from "./Routers/OrdersRouter.js";
 import ProductsRouter from './Routers/ProductsRouter.js'
 import ShopCartRouter from './Routers/ShopCartRouter.js'
 import CategoriesRouter from './Routers/CategoriesRouter.js'
-import ContactUs from './Routers/ContactUsRouter.js'
+import ContactUsRouter from './Routers/ContactUsRouter.js'
 import connectDB from "./database.js";
 
 const app = express()
 const port = process.env.PORT || 3000;
 connectDB();
+
+const allowedOriginsProd = [
+  'https://sealspark.onrender.com'
+];
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -28,13 +32,22 @@ app.options('*', cors());
 
 
 app.use(bodyParser.json());
+// Middleware שמדפיס פרמטרים לכל קריאה
+const logParamsMiddleware = (req, res, next) => {
+  console.log(`Route accessed: ${req.originalUrl}`);
+  console.log('Params:', req.params);
+  console.log('Query:', req.query);
+  next();
+};
 
-app.use('/users', UsersRouter)
-app.use('/orders', OrdersRouter)
-app.use('/shopCart', ShopCartRouter)
-app.use('/products', ProductsRouter)
-app.use('/categories', CategoriesRouter)
-app.use('/contactUs', ContactUs)
+// להוסיף לכל Router
+app.use('/users', logParamsMiddleware, UsersRouter);
+app.use('/orders', logParamsMiddleware, OrdersRouter);
+app.use('/shopCart', logParamsMiddleware, ShopCartRouter);
+app.use('/products', logParamsMiddleware, ProductsRouter);
+app.use('/categories', logParamsMiddleware, CategoriesRouter);
+app.use('/contactUs', logParamsMiddleware, ContactUsRouter);
+
 
 
 app.listen(port, () =>

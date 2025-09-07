@@ -23,7 +23,7 @@ export default function ProductDetails() {
 
   const dispatch = useDispatch();
   const baseUrl = window.location.origin;
-
+  console.log("baseUrl:", baseUrl);
   useEffect(() => {
     const fetchProduct = async () => {
       try {
