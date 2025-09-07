@@ -1,11 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import {thunk} from 'redux-thunk';
-import shopCartReducer  from './reducers/shopCartReducer.js';
-import usersReducer from './reducers/usersReducer.js'
-import productsReducer  from './reducers/productsReducer.js';
-import categoriesReducer  from './reducers/categoriesReducer.js';
-import ordersReducer from './reducers/ordersReducer.js';
-import contuctUsReducer from './reducers/contuctUsReducer.js';
+import shopCartReducer  from '../redux/reducers/shopCartReducer.js';
+import usersReducer from '../redux/reducers/usersReducer.js'
+import productsReducer  from '../redux/reducers/productsReducer.js';
+import categoriesReducer  from '../redux/reducers/categoriesReducer.js';
+import ordersReducer from '../redux/reducers/ordersReducer.js';
+import contuctUsReducer from '../redux/reducers/contuctUsReducer.js';
 
 const reducer = combineReducers({
   cart: shopCartReducer,
