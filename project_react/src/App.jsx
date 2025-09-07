@@ -17,10 +17,9 @@ import ProductDetails from './pages/Categories/ProductDetails.jsx'
 import Admin from './pages/management/Admin.jsx'
 import AddCategories from './pages/management/AddCategory.jsx'
 import AddProduct from './pages/management/AddProduct.jsx'
-import SeeUsers from './pages/mmnagement/SeeUsers.jsx'
+import SeeUsers from './pages/management/SeeUsers.jsx'
 import SeeOrders from './pages/management/SeeOrders.jsx'
 import SeeContuctUs from './pages/management/SeeContactUs.jsx'
-
 export default function App() {
   // const location = useLocation();
   // const background = location.state?.background;
