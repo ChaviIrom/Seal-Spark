@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCategories } from '../../redux/action/categoriesAction';
-import { fetchProducts } from "../../redux/action/productsAction";
-import { addProduct } from '../../redux/action/productsAction'; // יש להוסיף פונקציה זו לקובץ productsAction.js
+import { fetchCategories } from '../../redux/actions/categoriesAction';
+import { fetchProducts } from "../../redux/actions/productsAction";
+import { addProduct } from '../../redux/actions/productsAction'; // יש להוסיף פונקציה זו לקובץ productsAction.js
 import { useNavigate } from "react-router-dom";
 import '../../styles/Product.css'
 

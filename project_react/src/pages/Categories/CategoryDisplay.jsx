@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import { addToCartLocal } from '../../redux/action/shopCartActions.js';
+import { addToCartLocal } from '../../redux/actions/shopCartActions.js';
 import { Link, useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { getByCategory } from '../../api/products.js';

@@ -5,7 +5,7 @@ import '../styles/DesignHeader.css';
 import '../App.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchCurrentUser } from '../redux/action/usersAction.js';
+import { fetchCurrentUser } from '../redux/actions/usersAction.js';
 import SearchProduct from '../components/header/SearchProdect.jsx';
 
 export default function Root() {

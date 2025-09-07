@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchByOrderId } from '../../redux/action/ordersAction';
-import { fetchProducts } from '../../redux/action/productsAction';
+import { fetchByOrderId } from '../../redux/actions/ordersAction';
+import { fetchProducts } from '../../redux/actions/productsAction';
 import '../../styles/designOrderDetails.css'; // קובץ לא קיים, יש להוסיף בעתיד
 
 const OrderDetails = () => {

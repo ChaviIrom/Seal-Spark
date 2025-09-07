@@ -1,7 +1,7 @@
 import React, { useState , useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addCategory } from '../../redux/action/categoriesAction.js';
-import { fetchCategories } from '../../redux/action/categoriesAction.js';
+import { addCategory } from '../../redux/actions/categoriesAction.js';
+import { fetchCategories } from '../../redux/actions/categoriesAction.js';
 import { useNavigate } from "react-router-dom";
 import '../../styles/Category.css'
 

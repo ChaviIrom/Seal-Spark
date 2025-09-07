@@ -4,7 +4,7 @@ import imageContact from '../../../../public/pictures/ConcatUs/יצירת קשר
 import IconPhone from '../../../../public/pictures/ConcatUs/טלפון.png';
 import IconEmail from '../../../../public/pictures/ConcatUs/מייל.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../../redux/action/contactUsAction';
+import { addContact } from '../../../redux/actions/contactUsAction';
 
 export default function ContactUs() {
   const dispatch = useDispatch();

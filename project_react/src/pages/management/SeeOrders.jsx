@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchOrders } from '../../redux/action/ordersAction';
-import { fetchUsers } from '../../redux/action/usersAction';
-import { fetchProducts } from '../../redux/action/productsAction';
+import { fetchOrders } from '../../redux/actions/ordersAction';
+import { fetchUsers } from '../../redux/actions/usersAction';
+import { fetchProducts } from '../../redux/actions/productsAction';
 import { Link } from "react-router-dom";
 import '../../styles/seeOrders.css';
 

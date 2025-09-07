@@ -7,7 +7,7 @@ import {
   decrementQuantityLocal,
   removeFromCartLocal,
   loadLocalCart
-} from "../../redux/action/shopCartActions.js";
+} from "../../redux/actions/shopCartActions.js";
 import QuantitySelector from '../../components/QuantitySelector.jsx';
 import { useEffect } from 'react';
 
