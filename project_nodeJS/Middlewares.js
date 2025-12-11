@@ -1,5 +1,4 @@
-import crypto from 'crypto';
-import jwt from 'jsonwebtoken'
+import jwt from 'jsonwebtoken';
 
 // מידלוור לבדיקה כללית של טוקן JWT
 export const jwtMiddleware = (req, res, next) => {
@@ -15,46 +14,44 @@ export const jwtMiddleware = (req, res, next) => {
         const secret = process.env.JWT_SECRET;
         const decoded = jwt.verify(token, secret);
 
-        // אריזה תחת req.user
+        // אריזה אחידה תחת req.user
         req.user = {
-          userId: decoded.userId,
-          role: decoded.role,
+            userId: decoded.userId,
+            role: decoded.role,
         };
-        console.log("managerJwtMiddleware: decoded userId:", req.userId);
-        console.log("managerJwtMiddleware: decoded role:", req.role);
-        
+
+        console.log("jwtMiddleware: req.user:", req.user);
         next();
     } catch (err) {
+        console.log("JWT ERROR (general):", err);
         res.status(401).send({ message: "Unauthorized" });
     }
 };
 
 // מידלוור לבדיקה אם המשתמש הוא מנהל (role)
 export const managerJwtMiddleware = (req, res, next) => {
-
-    console.log("managerJwtMiddleware called");
-
     const authHeader = req.headers.authorization;
-    console.log("authHeader:", authHeader);
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        console.log("No or invalid authHeader (manager)");
+        console.log("managerJwtMiddleware: No or invalid authHeader");
         return res.status(401).send({ message: "Unauthorized - missing or invalid token" });
     }
 
     const token = authHeader.slice(7);
-    console.log("token (manager):", token);
 
     try {
         const secret = process.env.JWT_SECRET;
         const decoded = jwt.verify(token, secret);
-        req.userId = decoded.userId;
-        req.role = decoded.role; // הוצאת role מהטוקן
 
-        console.log("managerJwtMiddleware: decoded userId:", req.userId);
-        console.log("managerJwtMiddleware: decoded role:", req.role);
+        // אריזה אחידה תחת req.user
+        req.user = {
+            userId: decoded.userId,
+            role: decoded.role,
+        };
 
-        if (req.role === 'manager') {
+        console.log("managerJwtMiddleware: req.user:", req.user);
+
+        if (req.user.role === 'manager') {
             console.log("managerJwtMiddleware: user is מנהל, calling next()");
             next();
         } else {
@@ -65,4 +62,4 @@ export const managerJwtMiddleware = (req, res, next) => {
         console.log("JWT ERROR (manager):", err);
         res.status(401).send({ message: "Unauthorized" });
     }
-}
+};

@@ -6,9 +6,10 @@ import sendOrderConfirmation from "../Utils/sendOrderConfirmation.js";
 const OrdersController = 
 {
       getList: async (req, res) => {
-        if (req.role !== 'manager') {
-            return res.status(403).json({ message: 'Forbidden - requires manager role' });
-        }
+       if (req.user.role !== 'manager') {
+    return res.status(403).json({ message: 'Forbidden - requires manager role' });
+}
+
         try {
             const orders = await OrdersModel.find();
             res.json(orders);
